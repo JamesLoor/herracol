@@ -38,12 +38,14 @@ const ProductStyled = styled.div`
     font-size: 14px;
     font-weight: 700;
     grid-area: name;
+    text-transform: capitalize;
   }
 
   .product__brand {
     font-size: 12px;
     grid-area: brand;
     margin-bottom: 8px;
+    text-transform: capitalize;
   }
 
   .product__price {
@@ -64,7 +66,7 @@ const ProductModalStyled = styled.div`
   .modal__image {
     display: block;
     width: 100%;
-    height: 300px;
+    height: 250px;
     border: 1px solid ${theme.colors.secundaryLight};
     img {
       width: 100%;
@@ -76,8 +78,36 @@ const ProductModalStyled = styled.div`
   .modal__info {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 6px;
-    padding: 20px;
+    padding: 10px 15px;
+  }
+
+  .modal__category {
+    text-transform: capitalize;
+    font-size: 12px;
+  }
+
+  .modal__name {
+    margin-bottom: 5px;
+  }
+
+  .modal__brand,
+  .modal__code,
+  .modal__stock {
+    font-size: 13px;
+  }
+
+  .modal__stock {
+    margin-bottom: 5px;
+  }
+
+  .modal__price {
+    font-size: 20px;
+    font-weight: 1000;
+    margin-bottom: 5px;
+  }
+
+  .modal__button {
+    justify-self: center;
   }
 `
 
@@ -110,13 +140,13 @@ const Product = ({ image, name, brand, price, code, category }) => {
               <img src={image} alt={name} />
             </figure>
             <div className="modal__info">
-              <span className="modal__category">{category}</span>
+              <span className="modal__category">{category.join(', ')}</span>
               <h4 className="modal__name">{name}</h4>
               <span className="modal__brand">{`Marca: ${brand}`}</span>
-              <span className="modal__brand">{`Código: ${code}`}</span>
+              <span className="modal__code">{`Código: ${code}`}</span>
               <span className="modal__stock">{`Disponible: ✔`}</span>
               <span className="modal__price">{`$ ${price.toFixed(2)}`}</span>
-              <ButtonWhatsApp message={message}/>
+              <ButtonWhatsApp className="modal__button" message={message}/>
             </div>
           </ProductModalStyled>
         </Modal>

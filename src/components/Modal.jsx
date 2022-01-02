@@ -18,12 +18,12 @@ const ModalStyled = styled.div`
   background-color: ${theme.colors.modalBackground};
 
   .modal__container {
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    /* max-height: 600px; */
     position: relative;
     display: grid;
     width: 90%;
     max-width: 800px;
-    max-height: 600px;
     cursor: default;
     background-color: ${theme.colors.white};
   }

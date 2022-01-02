@@ -26,14 +26,14 @@ const ButtonWhatsAppStyled = styled.button`
     align-items: center;
   }
 `
-const ButtonWhatsApp = ({ message }) => {
+const ButtonWhatsApp = ({ message, className }) => {
   const phone = '593991820323'
   const url = `https://wa.me/${phone}?text=${encodeURI(message)}`
   const handleClick = () => {
     window.open(url, '_blank');
   }
   return (
-    <ButtonWhatsAppStyled type="button" onClick={handleClick}>
+    <ButtonWhatsAppStyled className={className} type="button" onClick={handleClick}>
       <Icon icon="whatsapp" width="18" height="18" color="white"/> Reservar por WhatsApp
     </ButtonWhatsAppStyled>
   )

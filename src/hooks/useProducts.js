@@ -34,7 +34,7 @@ const useProducts = () => {
     try {
       if(isProductListEmpty) {
         console.log('Trayendo los productos')
-        const result = await fetch(`${process.env.REACT_APP_API_URL}.json`)
+        const result = await fetch(`${process.env.REACT_APP_API_URL}/products.json`)
         const data = await result.json()
         dispatch(actions.fetchProducts(data))
       }
