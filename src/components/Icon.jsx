@@ -1,3 +1,4 @@
+import React from 'react'
 import { IconsPath } from '../iconsPath'
 import styled from 'styled-components'
 

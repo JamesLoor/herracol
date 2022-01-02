@@ -7,6 +7,9 @@ export const theme = {
     link: '#1101A6',
     white: '#FFFFFF',
     black: '#222931',
+    error: '#FF5252',
+    modalBackground: 'rgba(0, 0, 0, 0.3)',
+    whatsapp: '#25D366'
   },
 
   positions: {

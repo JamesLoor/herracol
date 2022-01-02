@@ -49,7 +49,7 @@ export const footerSections = [
       },
       {
         url: '/question/3',
-        name: '+593 99 9999 999'
+        name: '+593 98 324 5586'
       },
     ]
   },

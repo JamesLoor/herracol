@@ -32,4 +32,10 @@ button {
   cursor: pointer;
 }
 
+textarea {
+  resize: none;
+  outline: none;
+  border: none;
+}
+
 

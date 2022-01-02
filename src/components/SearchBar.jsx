@@ -1,6 +1,7 @@
-
+import React from 'react'
 import { useState } from 'react'
 import styled from 'styled-components'
+import useProducts from '../hooks/useProducts'
 import { theme } from '../theme'
 
 const SearchBarStyled = styled.div`
@@ -20,11 +21,12 @@ const SearchBarStyled = styled.div`
 `
 
 const SearchBar = ({ className }) => {
+  const { getProductsByName } = useProducts()
   const [inputValue, setInputValue] = useState('')
   const handleSearch = (event) => {
     const query = event.target.value
     setInputValue(query)
-    // searchProductByName(query)
+    getProductsByName(query)
   }
   return (
     <SearchBarStyled className={className}>

@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import React from 'react'
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
@@ -6,6 +9,7 @@ import ProductList from '../components/ProductList'
 import ProductsCounter from '../components/ProductsCounter'
 import SearchBar from '../components/SearchBar'
 import { Wrapper } from '../globalStyles'
+import useProducts from '../hooks/useProducts'
 
 const ProductsStyled = styled.div`
   position: relative;
@@ -35,13 +39,14 @@ const ProductsStyled = styled.div`
     grid-area: counter;
   }
 
-  .productList {
+  .product__list {
     grid-area: productList;
   }
 
   @media (min-width: 768px) {
     .products__container {
       grid-template-columns: min-content max-content 1fr;
+      grid-template-rows: min-content 1fr;
       grid-template-areas:
         "menu counter search"
         "menu productList productList";
@@ -52,16 +57,15 @@ const ProductsStyled = styled.div`
 
 const Products = () => {
   const { category } = useParams()
-  console.log(category ?? '')
 
   return (
     <ProductsStyled>
       <Wrapper>
         <div className="products__container">
-          <MenuCategory className="menu"/>
-          <ProductsCounter className="counter"/>
-          <SearchBar  className="search"/>
-          <ProductList className="productList"/>
+          <MenuCategory className="menu" />
+          <ProductsCounter className="counter" />
+          <SearchBar  className="search" />
+          <ProductList className="product__list" category={category}/>
         </div>
       </Wrapper>
       <Footer />

@@ -5,24 +5,24 @@ export const categories = [
     name: 'Todo',
     url: '/productos'
   },
-  {
-    id: '002',
-    type: 'construccion',
-    name: 'Construcción',
-    url: '/productos/construccion'
-  },
-  {
-    id: '003',
-    type: 'envase',
-    name: 'Envase',
-    url: '/productos/envase'
-  },
-  {
-    id: '004',
-    type: 'jardineria',
-    name: 'Jardineria',
-    url: '/productos/jardineria'
-  },
+  // {
+  //   id: '002',
+  //   type: 'construccion',
+  //   name: 'Construcción',
+  //   url: '/productos/construccion'
+  // },
+  // {
+  //   id: '003',
+  //   type: 'envase',
+  //   name: 'Envase',
+  //   url: '/productos/envase'
+  // },
+  // {
+  //   id: '004',
+  //   type: 'jardineria',
+  //   name: 'Jardineria',
+  //   url: '/productos/jardineria'
+  // },
   {
     id: '005',
     type: 'automotriz',
@@ -53,10 +53,10 @@ export const categories = [
     name: 'Equipo agrícola',
     url: '/productos/equipo-agricola'
   },
-  {
-    id: '010',
-    type: 'herraminetas-agricola',
-    name: 'Herramientas agrícolas',
-    url: '/productos/herramienta-agricola'
-  }
+  // {
+  //   id: '010',
+  //   type: 'herraminetas-agricola',
+  //   name: 'Herramientas agrícolas',
+  //   url: '/productos/herramienta-agricola'
+  // }
 ]

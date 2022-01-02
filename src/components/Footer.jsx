@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Wrapper } from '../globalStyles'
 import Logo from '../assets/logo.png'
@@ -5,6 +6,8 @@ import FooterSection from './FooterSection'
 import { footerSections } from '../data/footerSections.data'
 
 const FooterStyled = styled.div`
+  padding-bottom: 30px;
+
   .footer__container {
     display: grid;
     grid-auto-flow: row;
@@ -50,6 +53,7 @@ const Footer = () => {
             footerSections.map((section) => {
               return (
                 <FooterSection
+                  key={section.id}
                   title={section.title}
                   links={section.data}
                 />

@@ -1,6 +1,6 @@
-import OutsideClickHandler from 'react-outside-click-handler';
+import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import Link from './Link'
 import Icon from './Icon'
 import styled from 'styled-components'
 import { categories } from '../data/categories.data'
@@ -22,7 +22,7 @@ const MenuCategoryStyled = styled.div`
     grid-gap: 17.5px;
   }
 
-  .menu__category h2 {
+  .menu__category h3 {
     font-size: 24px;
     font-weight: 1000;
     color: ${theme.colors.black};
@@ -43,7 +43,7 @@ const MenuCategoryStyled = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: ${theme.colors.modalBackground};
   }
 
   @media (min-width: 768px) {
@@ -83,7 +83,7 @@ const MenuCategory = ({ className }) => {
       </button>
 
       <div className="menu__category">
-        <h2>Categorias</h2>
+        <h3>Categorias</h3>
         <ul>
             {categories.map(({ id, name, url }) => {
               return (
