@@ -33,7 +33,6 @@ const useProducts = () => {
     dispatch(actions.loading())
     try {
       if(isProductListEmpty) {
-        console.log('Trayendo los productos')
         const result = await fetch(`${process.env.REACT_APP_API_URL}/products.json`)
         const data = await result.json()
         dispatch(actions.fetchProducts(data))
@@ -47,7 +46,6 @@ const useProducts = () => {
     dispatch(actions.loading())
     try {
       if(!isProductListEmpty) {
-        console.log('Obteniendo todos los productos')
         dispatch(actions.getProducts())
       }
     } catch(error) {
@@ -62,7 +60,6 @@ const useProducts = () => {
         if(isProductListEmpty) {
           await fetchProducts()
         }
-        console.log('Obteniendo los productos por esta categoria ' + category)
         dispatch(actions.getProductsByCategory(category))
       } else {
         getAllProducts()

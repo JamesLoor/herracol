@@ -18,19 +18,18 @@ const ModalStyled = styled.div`
   background-color: ${theme.colors.modalBackground};
 
   .modal__container {
-    /* overflow-y: scroll; */
-    /* max-height: 600px; */
     position: relative;
     display: grid;
     width: 90%;
-    max-width: 800px;
+    max-width: ${({ maxWidth }) => maxWidth ? `${maxWidth}px` : '800px'};
+    max-height: ${({ maxHeight }) => maxHeight ? `${maxHeight}px` : 'none'};
     cursor: default;
     background-color: ${theme.colors.white};
   }
 `
 
 const ModalContainer = document.getElementById('modal')
-const Modal = ({ children, closeModal }) => {
+const Modal = ({ children, closeModal, ...rest }) => {
   const modalBackground = useRef(null)
   const handleModal = (e) => {
     if(modalBackground.current === e.target) {
@@ -38,7 +37,7 @@ const Modal = ({ children, closeModal }) => {
     }
   }
   return ReactDOM.createPortal(
-    <ModalStyled ref={modalBackground} onClick={handleModal}>
+    <ModalStyled ref={modalBackground} onClick={handleModal} {...rest}>
       <div className="modal__container">
         {children}
       </div>

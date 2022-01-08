@@ -14,15 +14,21 @@ const ProductStyled = styled.div`
   overflow: hidden;
   grid-gap: 10.5px;
 
+  &:hover .product__image img {
+    transform: scale(1.2);
+  }
+
   .product__image {
     display: block;
     width: 100%;
     height: 100%;
     border: 1px solid ${theme.colors.secundaryLight};
+    overflow: hidden;
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      transition: .3s;
     }
   }
 

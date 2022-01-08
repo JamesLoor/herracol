@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
-import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
@@ -9,7 +8,6 @@ import ProductList from '../components/ProductList'
 import ProductsCounter from '../components/ProductsCounter'
 import SearchBar from '../components/SearchBar'
 import { Wrapper } from '../globalStyles'
-import useProducts from '../hooks/useProducts'
 
 const ProductsStyled = styled.div`
   position: relative;
