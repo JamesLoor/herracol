@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Wrapper } from '../globalStyles'
 import { theme } from '../theme'
+import Logo from '../assets/LogoHeader.png'
 
 import Menu from './Menu'
 
@@ -22,10 +23,8 @@ const HeaderStyled = styled.div`
     align-items: center;
   }
 
-  .logo span {
-    font-size: 30px;
-    font-weight: bold;
-    color: ${theme.colors.white};
+  .logo img {
+    width: 250px
   }
 `
 
@@ -34,9 +33,9 @@ const Header = () => {
     <HeaderStyled>
       <Wrapper>
         <div className="header__container">
-          <div className="logo">
-            <span>Herracol</span>
-          </div>
+          <figure className="logo">
+            <img src={Logo} alt="Logo Herracol S.A" />
+          </figure>
 
           <Menu />
         </div>

@@ -10,7 +10,8 @@ export const theme = {
     error: '#FF5252',
     modalBackground: 'rgba(0, 0, 0, 0.3)',
     whatsapp: '#25D366',
-    ok: '#47C9A2'
+    ok: '#47C9A2',
+    skeleton: '#E3E3E3',
   },
 
   positions: {

@@ -3,10 +3,10 @@ export const footerSections = [
     id: 0,
     title: 'Empresa',
     data: [
-      {
-        url: '/nosotros',
-        name: 'Nosotros'
-      },
+      // {
+      //   url: '/nosotros',
+      //   name: 'Nosotros'
+      // },
       {
         url: '/productos',
         name: 'Productos',
@@ -17,54 +17,54 @@ export const footerSections = [
       }
     ]
   },
-  {
-    id: 1,
-    title: 'FAQ',
-    data: [
-      {
-        url: '/question/1',
-        name: '¿Cómo compro un producto?'
-      },
-      {
-        url: '/question/2',
-        name: '¿Hay envios a mi ubicación?'
-      },
-      {
-        url: '/question/3',
-        name: '¿Cómo opino sobre la aplicación?'
-      },
-    ]
-  },
+  // {
+  //   id: 1,
+  //   title: 'FAQ',
+  //   data: [
+  //     {
+  //       url: '/pregunta/1',
+  //       name: '¿Cómo compro un producto?'
+  //     },
+  //     {
+  //       url: '/pregunta/2',
+  //       name: '¿Hay envios a mi ubicación?'
+  //     },
+  //     {
+  //       url: '/pregunta/3',
+  //       name: '¿Cómo opino sobre la aplicación?'
+  //     },
+  //   ]
+  // },
   {
     id: 2,
     title: 'Contacto',
     data: [
       {
-        url: '/question/1',
-        name: 'Km 11 Via Daule'
+        url: 'https://www.google.com/maps?ll=-2.096338,-79.937145&z=17&t=m&hl=es&gl=EC&mapclient=embed&cid=3763735193489915217',
+        name: 'Via a Daule km 11.5 Bodegas C7 y C41 Parque California 2'
       },
       {
-        url: '/question/2',
-        name: 'ventas@herracol.net'
+        url: 'mailto: ventas@herracol.net',
+        name: 'info@herracol.net'
       },
       {
-        url: '/question/3',
+        url: 'tel:+593983245586',
         name: '+593 98 324 5586'
       },
     ]
   },
-  {
-    id: 3,
-    title: 'Legal',
-    data: [
-      {
-        url: '/policy',
-        name: 'Política de privacidad'
-      },
-      {
-        url: '/terms',
-        name: 'Términos y condiciones'
-      },
-    ]
-  },
+  // {
+  //   id: 3,
+  //   title: 'Legal',
+  //   data: [
+  //     {
+  //       url: '/privacidad',
+  //       name: 'Política de privacidad'
+  //     },
+  //     {
+  //       url: '/terminos',
+  //       name: 'Términos y condiciones'
+  //     },
+  //   ]
+  // },
 ]

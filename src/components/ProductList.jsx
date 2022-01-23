@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react'
+import React, { useEffect, Suspense, lazy } from 'react'
 import styled from 'styled-components'
-import Product from './Product'
 import useProducts from '../hooks/useProducts'
+import ProductSkeleton from './ProductSkeleton'
+
+const Product = lazy(() => import('./Product'))
 
 const ProductListStyled = styled.div`
   display: grid;
@@ -18,8 +20,7 @@ const ProductListStyled = styled.div`
 `
 
 const ProductList = ({ className, category }) => {
-  const { list, isListEmpty, isLoading } = useProducts()
-  const { fetchProducts, getProductsByCategory } = useProducts()
+  const { list, isListEmpty, isLoading, fetchProducts, getProductsByCategory } = useProducts()
 
   useEffect(() => {
     fetchProducts()
@@ -49,7 +50,9 @@ const ProductList = ({ className, category }) => {
     <ProductListStyled className={className}>
       {list.map((product) => {
         return (
-          <Product key={product.id} {...product} />
+          <Suspense key={product.id} fallback={<ProductSkeleton/>}>
+            <Product {...product} />
+          </Suspense>
         )
       })}
     </ProductListStyled>

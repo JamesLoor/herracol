@@ -140,7 +140,6 @@ const ContactForm = ({ className }) => {
 
   return (
     <>
-
       <ContactFormStyled className={className}>
         <h2 className="form__title">Dejanos un mensaje</h2>
 

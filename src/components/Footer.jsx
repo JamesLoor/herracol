@@ -31,13 +31,11 @@ const FooterStyled = styled.div`
     }
   }
 
-  @media (min-width: 1100px) {
+  /* @media (min-width: 1100px) {
     .footer__container {
-      display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      gap: 40px;
     }
-  }
+  } */
 `
 
 const Footer = () => {

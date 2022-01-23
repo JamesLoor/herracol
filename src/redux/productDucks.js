@@ -47,9 +47,9 @@ export const productReducer = (state = initialState, { type, payload }) => {
     case GET_PRODUCTS_BY_NAME: {
       let productListByName
       if(state.category) {
-        productListByName = state.productListByCategory.filter((product) => product.name.toLowerCase().startsWith(payload.toLowerCase()))
+        productListByName = state.productListByCategory.filter((product) => product.name.toLowerCase().includes(payload.toLowerCase()))
       } else {
-        productListByName = state.all.filter((product) => product.name.toLowerCase().startsWith(payload.toLowerCase()))
+        productListByName = state.all.filter((product) => product.name.toLowerCase().includes(payload.toLowerCase()))
       }
 
       return {

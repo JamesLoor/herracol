@@ -57,16 +57,24 @@ const Contact = () => {
           <ContactForm className="contact__form"/>
           <div className="contact__info__grid">
             <div className="contact__info">
-              <Icon icon="phone" width="30" height="30" color={theme.colors.black} />
+              <Icon icon="whatsapp" width="30" height="30" color={theme.colors.black} />
               <span>+593 98 324 5586</span>
             </div>
             <div className="contact__info">
+              <Icon icon="instagram" width="30" height="30" color={theme.colors.black} />
+              <span>@herracol_sa</span>
+            </div>
+            <div className="contact__info">
+              <Icon icon="phone" width="30" height="30" color={theme.colors.black} />
+              <span>+593 4 2103460</span>
+            </div>
+            <div className="contact__info">
               <Icon icon="location" width="30" height="30" color={theme.colors.black} />
-              <span>Tarqui/km 11 Via a daule bodega C 7 S/N y parque california 2</span>
+              <span>Via a Daule km 11.5 Bodegas C7 y C41 Parque California 2 - Guayaquil - Ecuador</span>
             </div>
             <div className="contact__info">
               <Icon icon="card" width="30" height="30" color={theme.colors.black} />
-              <span>info@ventas.ec - ventas@herracol.net</span>
+              <span>info@herracol.net - ventas@herracol.net - importaciones@herracol.net</span>
             </div>
           </div>
           <AddressMap className="contact__map"/>

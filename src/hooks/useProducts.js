@@ -11,6 +11,7 @@ const useProducts = () => {
   const isProductListEmpty = !all.length
   const category = useSelector(store => store.product.category)
   const name = useSelector(store => store.product.name)
+  const API = "https://herracol-api-8820d-default-rtdb.firebaseio.com"
 
   const selectList = () => {
     if(productListByCategory.length > 0 && category && !name) {
@@ -33,7 +34,7 @@ const useProducts = () => {
     dispatch(actions.loading())
     try {
       if(isProductListEmpty) {
-        const result = await fetch(`${process.env.REACT_APP_API_URL}/products.json`)
+        const result = await fetch(`${API}/products.json`)
         const data = await result.json()
         dispatch(actions.fetchProducts(data))
       }

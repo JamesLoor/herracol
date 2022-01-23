@@ -6,7 +6,6 @@ import RouterMain from './routes/RouterMain';
 
 function App() {
   const store = generateStore()
-
   return (
     <Provider store={store}>
       <RouterMain />

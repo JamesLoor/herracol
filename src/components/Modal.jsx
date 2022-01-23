@@ -21,10 +21,19 @@ const ModalStyled = styled.div`
     position: relative;
     display: grid;
     width: 90%;
+    height: 90%;
+    overflow: scroll;
     max-width: ${({ maxWidth }) => maxWidth ? `${maxWidth}px` : '800px'};
     max-height: ${({ maxHeight }) => maxHeight ? `${maxHeight}px` : 'none'};
     cursor: default;
     background-color: ${theme.colors.white};
+  }
+
+  @media (min-height: 480px) {
+    .modal__container {
+      height: auto;
+      overflow: hidden;
+    }
   }
 `
 

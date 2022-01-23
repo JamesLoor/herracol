@@ -9,6 +9,7 @@ import ProductsCounter from '../components/ProductsCounter'
 import SearchBar from '../components/SearchBar'
 import { Wrapper } from '../globalStyles'
 
+
 const ProductsStyled = styled.div`
   position: relative;
   padding-bottom: 50px;

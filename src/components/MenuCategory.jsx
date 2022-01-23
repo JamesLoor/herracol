@@ -5,12 +5,13 @@ import Icon from './Icon'
 import styled from 'styled-components'
 import { categories } from '../data/categories.data'
 import { theme } from '../theme'
+import { catalogs } from '../data/catalogs.data'
 
 const MenuCategoryStyled = styled.div`
   .menu__category {
     display: ${({ isOpen }) => isOpen ? 'grid' : 'none'};
     position: fixed;
-    grid-template-rows: min-content min-content;
+    grid-template-rows: min-content min-content min-content min-content;
     width: 265px;
     top: 69px;
     left: 0;
@@ -62,6 +63,13 @@ const MenuCategoryStyled = styled.div`
       display: none;
     }
   }
+
+  @media (max-height: 810px) {
+    .menu__category {
+      height: calc(100vh - 100px);
+      overflow-y: scroll;
+    }
+  }
 `
 
 const MenuCategory = ({ className }) => {
@@ -90,6 +98,15 @@ const MenuCategory = ({ className }) => {
                 <li key={id}><Link to={url} onClick={closeMenu}>{name}</Link></li>
               )
             })}
+        </ul>
+
+        <h4>Catalogos</h4>
+        <ul>
+          {catalogs.map(({id, title, link}) => {
+            return (
+              <li key={id}><Link to={link} onClick={closeMenu}>{title}</Link></li>
+            )
+          })}
         </ul>
       </div>
     </MenuCategoryStyled>

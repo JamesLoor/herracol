@@ -108,14 +108,6 @@ const Menu = () => {
           </li>
           <li onClick={handleMenuClose}>
             <NavLink
-              to="/nosotros"
-              className={({ isActive }) => isActive ? 'link__active' : ''}
-            >
-              Nosotros
-            </NavLink>
-          </li>
-          <li onClick={handleMenuClose}>
-            <NavLink
               to="/productos"
               className={({ isActive }) => isActive ? 'link__active' : ''}
             >

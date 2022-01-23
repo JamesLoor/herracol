@@ -5,7 +5,8 @@ import Icon from './Icon'
 
 const ButtonWhatsAppStyled = styled.button`
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: min-content max-content;
+  justify-content: center;
   align-items: center;
   line-height: 25px;
   grid-gap: 10px;
@@ -20,6 +21,7 @@ const ButtonWhatsAppStyled = styled.button`
   border-radius: 20px;
   padding: 10.5px 21px;
   background-color: ${theme.colors.whatsapp};
+
   svg {
     display: flex;
     justify-content: center;
@@ -27,7 +29,7 @@ const ButtonWhatsAppStyled = styled.button`
   }
 `
 const ButtonWhatsApp = ({ message, className }) => {
-  const phone = '593991820323'
+  const phone = '593983245586'
   const url = `https://wa.me/${phone}?text=${encodeURI(message)}`
   const handleClick = () => {
     window.open(url, '_blank');

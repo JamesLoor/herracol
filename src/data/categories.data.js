@@ -11,12 +11,12 @@ export const categories = [
   //   name: 'Construcción',
   //   url: '/productos/construccion'
   // },
-  // {
-  //   id: '003',
-  //   type: 'envase',
-  //   name: 'Envase',
-  //   url: '/productos/envase'
-  // },
+  {
+    id: '003',
+    type: 'envases',
+    name: 'Envases',
+    url: '/productos/envases'
+  },
   // {
   //   id: '004',
   //   type: 'jardineria',
@@ -52,6 +52,78 @@ export const categories = [
     type: 'equipo-agricola',
     name: 'Equipo agrícola',
     url: '/productos/equipo-agricola'
+  },
+  {
+    id: '010',
+    type: 'herramientas',
+    name: 'Herramientas',
+    url: '/productos/herramientas'
+  },
+  {
+    id: '011',
+    type: 'machetes',
+    name: 'Machetes',
+    url: '/productos/machetes'
+  },
+  {
+    id: '012',
+    type: 'cuchillas',
+    name: 'Cuchillas',
+    url: '/productos/cuchillas'
+  },
+  {
+    id: '013',
+    type: 'podar',
+    name: 'Podar',
+    url: '/productos/podar'
+  },
+  {
+    id: '014',
+    type: 'palas',
+    name: 'Palas',
+    url: '/productos/palas'
+  },
+  {
+    id: '015',
+    type: 'brochas',
+    name: 'Brochas',
+    url: '/productos/brochas'
+  },
+  {
+    id: '016',
+    type: 'llanas',
+    name: 'Llanas',
+    url: '/productos/llanas'
+  },
+  {
+    id: '017',
+    type: 'varios',
+    name: 'Varios',
+    url: '/productos/varios'
+  },
+  {
+    id: '018',
+    type: 'seguridad-industrial',
+    name: 'Seguridad industrial',
+    url: '/productos/seguridad-industrial'
+  },
+  {
+    id: '019',
+    type: 'hoces',
+    name: 'Hoces',
+    url: '/productos/hoces'
+  },
+  {
+    id: '020',
+    type: 'discos',
+    name: 'Discos',
+    url: '/productos/discos'
+  },
+  {
+    id: '021',
+    type: 'zapapicos',
+    name: 'Zapapicos',
+    url: '/productos/zapapicos'
   },
   // {
   //   id: '010',
