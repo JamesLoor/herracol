@@ -64,10 +64,12 @@ const MenuCategoryStyled = styled.div`
     }
   }
 
-  @media (max-height: 810px) {
-    .menu__category {
-      height: calc(100vh - 100px);
-      overflow-y: scroll;
+  @media (max-width: 768px) {
+    @media (max-height: 810px) {
+      .menu__category {
+        height: calc(100vh - 30px);
+        overflow-y: scroll;
+      }
     }
   }
 `
