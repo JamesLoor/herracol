@@ -159,6 +159,10 @@ const HomeStyled = styled.div`
     padding-bottom: 50px;
   }
 
+  .history__text {
+    font-size: 18px;
+  }
+
   .history__figure {
     grid-area: image;
   }
@@ -192,6 +196,47 @@ const HomeStyled = styled.div`
 
     .history__text {
       font-size: 20px;
+    }
+  }
+
+  .testimonials__title {
+    text-align: center;
+  }
+
+  .testimonials__text {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .testimonials__content {
+    display: grid;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .testimonials__content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonials__text {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonials__container {
+      padding: 50px;
+    }
+
+    .testimonials__content{
+      gap: 70px;
+    }
+
+    .testimonials__text {
+      font-size: 20px;
+      width: 70%;
+      margin: 0 auto 40px auto;
     }
   }
 `
@@ -265,11 +310,11 @@ const Home = () => {
         </div>
 
         <div className="testimonials__container">
-          <TitleH2>Testimonios</TitleH2>
+          <TitleH2 className="testimonials__title">Testimonios</TitleH2>
           <p className="testimonials__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 
           <div className="testimonials__content">
-            <Testimonial image={logoGavilan} name="John Doe" type="Cliente" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."/>
+            <Testimonial image={logoAbro} name="John Doe" type="Cliente" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."/>
             <Testimonial image={logoAbro} name="John Doe" type="Cliente" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."/>
             <Testimonial image={logoAbro} name="John Doe" type="Cliente" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."/>
           </div>
