@@ -67,11 +67,21 @@ const MenuCategoryStyled = styled.div`
   @media (max-width: 768px) {
     @media (max-height: 810px) {
       .menu__category {
-        height: calc(100vh - 30px);
+        height: calc(100vh - 60px);
         overflow-y: scroll;
       }
     }
   }
+
+  @media (min-width: 768px) {
+    @media (max-height: 810px) {
+      .menu__category {
+        height: calc(100vh - 100px);
+        overflow-y: scroll;
+      }
+    }
+  }
+
 `
 
 const MenuCategory = ({ className }) => {

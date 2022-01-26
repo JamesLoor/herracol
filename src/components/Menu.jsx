@@ -67,6 +67,7 @@ const MenuStyled = styled.div`
     .menu__nav {
       position: static;
       display: block;
+      background-color: transparent;
     }
 
     .menu__nav ul {

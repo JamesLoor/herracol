@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { Wrapper } from '../globalStyles'
 import { theme } from '../theme'
 import Logo from '../assets/LogoHeader.png'
+import LogoSvg from '../assets/logoHerracol.svg'
+import LogoSvgShort from '../assets/Group436.svg'
 
 import Menu from './Menu'
 
@@ -24,7 +26,7 @@ const HeaderStyled = styled.div`
   }
 
   .logo img {
-    width: 250px
+    width: 225px
   }
 `
 
@@ -34,7 +36,7 @@ const Header = () => {
       <Wrapper>
         <div className="header__container">
           <figure className="logo">
-            <img src={Logo} alt="Logo Herracol S.A" />
+            <img src={LogoSvgShort} alt="Logo Herracol S.A" />
           </figure>
 
           <Menu />
