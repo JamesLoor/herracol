@@ -1,21 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Wrapper, TitleH2 } from '../globalStyles'
+import { Wrapper } from '../globalStyles'
 import Logo from '../assets/LogoGrande.png'
 import Button from '../components/Button'
 import Link from '../components/Link'
-import Value from '../components/Value'
-import Testimonial from '../components/Testimonial'
-import logoAbro from '../assets/brands/logoAbro.png'
-import logoColima from '../assets/brands/logoColima.png'
-import logoGermany from '../assets/brands/logoGermany.png'
-import logoBolt from '../assets/brands/logoBolt.png'
-import logoGavilan from '../assets/brands/logoGavilan.png'
-import logoIncolma from '../assets/brands/logoIncolma.png'
-import logoTekbond from '../assets/brands/logoTEKBOND.png'
-import logoCaribe from '../assets/brands/logoCaribe.png'
-import logoSaintGobain from '../assets/brands/logoSaintGobain.png'
-import pruebaHistoria from '../assets/pruebaHistoria.png'
+// import { TitleH2 } from '../globalStyles'
+// import Value from '../components/Value'
+// import Testimonial from '../components/Testimonial'
+// import logoAbro from '../assets/brands/logoAbro.png'
+// import logoColima from '../assets/brands/logoColima.png'
+// import logoGermany from '../assets/brands/logoGermany.png'
+// import logoBolt from '../assets/brands/logoBolt.png'
+// import logoGavilan from '../assets/brands/logoGavilan.png'
+// import logoIncolma from '../assets/brands/logoIncolma.png'
+// import logoTekbond from '../assets/brands/logoTEKBOND.png'
+// import logoCaribe from '../assets/brands/logoCaribe.png'
+// import logoSaintGobain from '../assets/brands/logoSaintGobain.png'
+// import pruebaHistoria from '../assets/pruebaHistoria.png'
 
 const HomeStyled = styled.div`
   .hero__container {
@@ -46,6 +47,7 @@ const HomeStyled = styled.div`
 
   .hero__content button {
     width: min-content;
+    margin-top: 10px;
   }
 
   .hero__content h1 {
@@ -242,10 +244,6 @@ const HomeStyled = styled.div`
 `
 
 const Home = () => {
-  const handleButton = () => {
-
-  }
-
   return (
     <HomeStyled>
       <Wrapper>
@@ -265,7 +263,7 @@ const Home = () => {
           </figure>
         </div>
 
-        <div className="values__container">
+        {/* <div className="values__container">
             <TitleH2 className="values_title">Nuestros Valores</TitleH2>
             <p className="values__container_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 
@@ -318,7 +316,7 @@ const Home = () => {
             <Testimonial image={logoAbro} name="John Doe" type="Cliente" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."/>
             <Testimonial image={logoAbro} name="John Doe" type="Cliente" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."/>
           </div>
-        </div>
+        </div> */}
       </Wrapper>
     </HomeStyled>
   )

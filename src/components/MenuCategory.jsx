@@ -5,7 +5,7 @@ import Icon from './Icon'
 import styled from 'styled-components'
 import { categories } from '../data/categories.data'
 import { theme } from '../theme'
-import { catalogs } from '../data/catalogs.data'
+// import { catalogs } from '../data/catalogs.data'
 
 const MenuCategoryStyled = styled.div`
   .menu__category {
@@ -18,7 +18,6 @@ const MenuCategoryStyled = styled.div`
     bottom: 0;
     z-index: 99;
     padding: 20px;
-    /* background-color: ${theme.colors.secundaryLight}; */
     background-color: #E5E5E5;
     grid-gap: 17.5px;
   }
@@ -38,6 +37,10 @@ const MenuCategoryStyled = styled.div`
     color: ${theme.colors.black};
   }
 
+  .menu__category li a:hover {
+    color: ${theme.colors.link};
+  }
+
   .overlay {
     position: fixed;
     top: 0;
@@ -47,12 +50,17 @@ const MenuCategoryStyled = styled.div`
     background-color: ${theme.colors.modalBackground};
   }
 
+  .menu__catalogue li button:hover {
+    color: ${theme.colors.link};
+  }
+
   @media (min-width: 768px) {
     .menu__category {
       top: 90px;
       bottom: 0;
       position: sticky;
       display: grid;
+      background-color: transparent;
     }
 
     .menu__point {
@@ -112,13 +120,15 @@ const MenuCategory = ({ className }) => {
             })}
         </ul>
 
-        <h4>Catalogos</h4>
-        <ul>
-          {catalogs.map(({id, title, link}) => {
+        <h4>Catálogo Herracol 2022</h4>
+        <ul className="menu__catalogue">
+          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FCatalogoHerracol%20(1).pdf?alt=media" onClick={closeMenu}>PDF</Link></li>
+          <li><Link to="https://fliphtml5.com/mfsdq/ztmh" onClick={closeMenu}>FLIP (Libro)</Link></li>
+          {/* {catalogs.map(({id, title, link}) => {
             return (
               <li key={id}><Link to={link} onClick={closeMenu}>{title}</Link></li>
             )
-          })}
+          })} */}
         </ul>
       </div>
     </MenuCategoryStyled>
