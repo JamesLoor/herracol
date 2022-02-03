@@ -4,7 +4,6 @@ import {
   Routes,
   Route,
   useLocation,
-  Navigate
 } from "react-router-dom";
 
 import Home from '../pages/Home'
@@ -12,6 +11,7 @@ import Products from '../pages/Products'
 import Contact from '../pages/Contact'
 import Question from '../pages/Question';
 import NotFound from '../pages/NotFound'
+import Login from '../pages/Login';
 import Layout from '../components/Layout'
 
 const Wrapper = ({children}) => {
@@ -27,6 +27,7 @@ const RouterMain = () => {
     <BrowserRouter>
       <Wrapper>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/productos" element={<Products />} />
