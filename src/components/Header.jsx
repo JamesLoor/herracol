@@ -14,7 +14,8 @@ const HeaderStyled = styled.div`
   display: grid;
   align-items: center;
   min-height: 69px;
-  background-color: ${theme.colors.secundaryDark};
+  /* background-color: ${theme.colors.secundaryDark}; */
+  background: linear-gradient(90deg, #26214F 0%, rgba(20, 16, 53, 100%) 100%);
   z-index: ${theme.positions.header};
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.13);
 

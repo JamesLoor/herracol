@@ -4,18 +4,21 @@ import { Wrapper } from '../globalStyles'
 import Logo from '../assets/LogoGrande.png'
 import Button from '../components/Button'
 import Link from '../components/Link'
-// import { TitleH2 } from '../globalStyles'
+import { TitleH2 } from '../globalStyles'
 // import Value from '../components/Value'
 // import Testimonial from '../components/Testimonial'
-// import logoAbro from '../assets/brands/logoAbro.png'
-// import logoColima from '../assets/brands/logoColima.png'
-// import logoGermany from '../assets/brands/logoGermany.png'
-// import logoBolt from '../assets/brands/logoBolt.png'
-// import logoGavilan from '../assets/brands/logoGavilan.png'
-// import logoIncolma from '../assets/brands/logoIncolma.png'
-// import logoTekbond from '../assets/brands/logoTEKBOND.png'
-// import logoCaribe from '../assets/brands/logoCaribe.png'
-// import logoSaintGobain from '../assets/brands/logoSaintGobain.png'
+import logoAbro from '../assets/brands/logoAbro.png'
+import logoColima from '../assets/brands/logoColima.png'
+import logoGermany from '../assets/brands/logoGermany.png'
+import logoBolt from '../assets/brands/logoBolt.png'
+import logoGavilan from '../assets/brands/logoGavilan.png'
+import logoIncolma from '../assets/brands/logoIncolma.png'
+import logoTekbond from '../assets/brands/logoTekbond.png'
+import logoCaribe from '../assets/brands/logoCaribe.png'
+import logoSaintGobain from '../assets/brands/logoSaintGobain.png'
+import logoPractiagro from '../assets/brands/logoPractiagro.png'
+import logoNorton from '../assets/brands/logoNorton.png'
+import logoAgrimix from '../assets/brands/logoAgrimix.png'
 // import pruebaHistoria from '../assets/pruebaHistoria.png'
 
 const HomeStyled = styled.div`
@@ -132,7 +135,7 @@ const HomeStyled = styled.div`
 
   @media (min-width: 768px) {
     .brands__content {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 20px;
     }
     .brands__text {
@@ -273,26 +276,29 @@ const Home = () => {
               <Value icon="" title="Valor3" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "/>
               <Value icon="" title="Valor4" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "/>
             </div>
-        </div>
+        </div> */}
 
         <div className="brands__container">
             <TitleH2 className="brands__title">Nuestras Marcas</TitleH2>
-            <p className="brands__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            {/* <p className="brands__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> */}
 
             <figure className="brands__content">
-              <img src={logoAbro} alt="Logo Abro" />
-              <img src={logoColima} alt="Logo Colima" />
-              <img src={logoGermany} alt="Logo Germany" />
               <img src={logoBolt} alt="Logo Bolt" />
+              <img src={logoGermany} alt="Logo Germany" />
               <img src={logoGavilan} alt="Logo Gavilan" />
               <img src={logoIncolma} alt="Logo Incolma" />
-              <img src={logoTekbond} alt="Logo Tekbond" />
-              <img src={logoCaribe} alt="Logo Caribe" />
+              <img src={logoColima} alt="Logo Colima" />
+              <img src={logoAbro} alt="Logo Abro" />
+              <img src={logoNorton} alt="Logo Norton" />
               <img src={logoSaintGobain} alt="Logo Saint Gobain" />
+              <img src={logoCaribe} alt="Logo Caribe" />
+              <img src={logoTekbond} alt="Logo Tekbond" />
+              <img src={logoPractiagro} alt="Logo Practiagro" />
+              <img src={logoAgrimix} alt="Logo Agrimix" />
             </figure>
         </div>
 
-        <div className="history__container">
+        {/* <div className="history__container">
           <figure className="history__figure">
             <img src={pruebaHistoria} alt=""/>
           </figure>
