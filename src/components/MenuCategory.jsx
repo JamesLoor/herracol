@@ -130,6 +130,20 @@ const MenuCategory = ({ className }) => {
             )
           })} */}
         </ul>
+
+        <h4>Presentaciones Agrimix</h4>
+        <ul className="menu__catalogue">
+          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FAgrimix%20Presentacion%20Espanol.pdf?alt=media" onClick={closeMenu}>Agrimix</Link></li>
+          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FPresentacion%20Agrimix.pdf?alt=media" onClick={closeMenu}>Productos 1</Link></li>
+          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FAgrimix%20-%20Presentacion%20Cuchillas-Extractor%20etc.pdf?alt=media" onClick={closeMenu}>Productos 2</Link></li>
+          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FPresentaci%C3%B3n%20del%20Mando%20Final%20COMER%20-%20Cosechadora%20de%20Ca%C3%B1a.pdf?alt=media" onClick={closeMenu}>Cosechadora De Caña</Link></li>
+          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FCapuchones-convertido.pdf?alt=media" onClick={closeMenu}>Componentes De Cosechadora</Link></li>
+          {/* {catalogs.map(({id, title, link}) => {
+            return (
+              <li key={id}><Link to={link} onClick={closeMenu}>{title}</Link></li>
+            )
+          })} */}
+        </ul>
       </div>
     </MenuCategoryStyled>
   )
