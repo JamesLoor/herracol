@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import * as Yup from 'yup'
-import { useFormik } from 'formik'
 import Button from '../components/Button'
-import { theme } from '../theme'
+import useAuth from '../hooks/useAuth'
+import { useFormik } from 'formik'
 
 import Input from '../components/Input'
 
@@ -12,13 +12,15 @@ const LoginStyled = styled.div`
 `
 
 const Login = () => {
+  const { login } = useAuth()
   const initialValues = { email: '', password: '' }
   const validationSchema = Yup.object({
     email: Yup.string().email('Correo Invalido').required('Obligatorio'),
     password: Yup.string().required('Obligatorio')
   })
-  const onSubmit = () => {
-
+  const onSubmit = async (values, actions) => {
+    login(values)
+    actions.resetForm()
   }
 
   const formik = useFormik({ initialValues, validationSchema, onSubmit })
