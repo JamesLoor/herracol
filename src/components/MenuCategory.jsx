@@ -122,8 +122,8 @@ const MenuCategory = ({ className }) => {
 
         <h4>Catálogo Herracol 2022</h4>
         <ul className="menu__catalogue">
-          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FCatalogoHerracol%20(1).pdf?alt=media" onClick={closeMenu}>PDF</Link></li>
-          <li><Link to="https://fliphtml5.com/mfsdq/ztmh" onClick={closeMenu}>FLIP (Libro)</Link></li>
+          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FHerracol%2FCatalogoHerracol2022.pdf?alt=media" onClick={closeMenu}>PDF</Link></li>
+          <li><Link to="https://online.fliphtml5.com/mfsdq/qmxs" onClick={closeMenu}>FLIP (Libro)</Link></li>
           {/* {catalogs.map(({id, title, link}) => {
             return (
               <li key={id}><Link to={link} onClick={closeMenu}>{title}</Link></li>

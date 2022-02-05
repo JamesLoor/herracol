@@ -12,8 +12,8 @@ export const footerSections = [
         name: 'Productos',
       },
       {
-        url: 'https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FHerracolCatalogo2021.pdf?alt=media',
-        name: 'Catalogo'
+        url: 'https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FHerracol%2FCatalogoHerracol2022.pdf?alt=media',
+        name: 'Catálogo'
       }
     ]
   },
