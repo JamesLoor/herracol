@@ -13,6 +13,8 @@ import Question from '../pages/Question';
 import NotFound from '../pages/NotFound'
 import Login from '../pages/Login';
 import Layout from '../components/Layout'
+import PrivateRoute from '../components/PrivateRoute';
+import Admin from '../pages/Admin';
 
 const Wrapper = ({children}) => {
   const location = useLocation();
@@ -34,8 +36,16 @@ const RouterMain = () => {
             <Route path="/productos/:category" element={<Products />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/pregunta/:id" element={<Question />} />
-            <Route path="*" element={<NotFound />} />
           </Route>
+          <Route
+            path="/admin"
+            element={
+              <PrivateRoute>
+                <Admin/>
+              </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Wrapper>
     </BrowserRouter>

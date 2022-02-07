@@ -4,15 +4,17 @@ import * as Yup from 'yup'
 import Button from '../components/Button'
 import useAuth from '../hooks/useAuth'
 import { useFormik } from 'formik'
-
 import Input from '../components/Input'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const LoginStyled = styled.div`
   /*  */
 `
 
 const Login = () => {
-  const { login } = useAuth()
+  const navigate = useNavigate()
+  const { user, login } = useAuth()
   const initialValues = { email: '', password: '' }
   const validationSchema = Yup.object({
     email: Yup.string().email('Correo Invalido').required('Obligatorio'),
@@ -22,6 +24,12 @@ const Login = () => {
     login(values)
     actions.resetForm()
   }
+
+  useEffect(() => {
+    if(user) {
+      navigate('/admin')
+    }
+  }, [navigate, user])
 
   const formik = useFormik({ initialValues, validationSchema, onSubmit })
   return (

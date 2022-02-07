@@ -41,10 +41,10 @@ export const authReducer = (state = initialState, { type, payload }) => {
 
 // Actions
 export const actions = {
-  authLogin: (email, password) => {
+  authLogin: (user) => {
     return {
       type: AUTH_LOGIN,
-      payload: {email, password}
+      payload: user
     }
   },
 
