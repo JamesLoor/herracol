@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-import Link from './Link'
 import Icon from './Icon'
 import styled from 'styled-components'
 import { categories } from '../data/categories.data'
+import { catalogsHerracol } from '../data/catalogsHerracol.data'
+import { catalogsAgrimix } from '../data/catalogsAgrimix.data'
 import { theme } from '../theme'
-// import { catalogs } from '../data/catalogs.data'
+import CategoryItemList from './CategoryItemList'
 
 const MenuCategoryStyled = styled.div`
   .menu__category {
@@ -18,28 +19,52 @@ const MenuCategoryStyled = styled.div`
     bottom: 0;
     z-index: 99;
     padding: 20px;
-    background-color: #E5E5E5;
+    background-color: #100d28;
     grid-gap: 17.5px;
+  }
+
+  .menu__category::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  .menu__category::-webkit-scrollbar-thumb {
+    background: ${theme.colors.accent};
   }
 
   .menu__category h3 {
     font-size: 24px;
     font-weight: 1000;
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
+  }
+
+  .menu__category h4 {
+    margin-top: 20px;
   }
 
   .menu__category ul {
     display: grid;
-    gap: 6px;
+    gap: 10px;
   }
 
-  .menu__category li a {
-    color: ${theme.colors.black};
+  .category__item__list {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 7px 20px;
+    background-color: #151136;
+    color: ${theme.colors.white};
+    cursor: pointer;
+    height: 35px;
   }
 
-  .menu__category li a:hover {
+  .category__item__list__icon {
+    overflow: hidden;
+  }
+
+  /* .category__item__list:hover {
     color: ${theme.colors.link};
-  }
+  } */
 
   .overlay {
     position: fixed;
@@ -50,7 +75,11 @@ const MenuCategoryStyled = styled.div`
     background-color: ${theme.colors.modalBackground};
   }
 
-  .menu__catalogue li button:hover {
+  .menu__category h4 {
+    color: ${theme.colors.white}
+  }
+
+  .menu__catalog li button:hover {
     color: ${theme.colors.link};
   }
 
@@ -60,7 +89,7 @@ const MenuCategoryStyled = styled.div`
       bottom: 0;
       position: sticky;
       display: grid;
-      background-color: transparent;
+      background-color: #100d28;
     }
 
     .menu__point {
@@ -115,34 +144,27 @@ const MenuCategory = ({ className }) => {
         <ul>
             {categories.map(({ id, name, url }) => {
               return (
-                <li key={id}><Link to={url} onClick={closeMenu}>{name}</Link></li>
+                <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenu}/>
               )
             })}
         </ul>
 
         <h4>Catálogo Herracol 2022</h4>
-        <ul className="menu__catalogue">
-          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FHerracol%2FCatalogoHerracol2022.pdf?alt=media" onClick={closeMenu}>PDF</Link></li>
-          <li><Link to="https://online.fliphtml5.com/mfsdq/qmxs" onClick={closeMenu}>FLIP (Libro)</Link></li>
-          {/* {catalogs.map(({id, title, link}) => {
+        <ul className="menu__catalog">
+          {catalogsHerracol.map(({ id, name, url }) => {
             return (
-              <li key={id}><Link to={link} onClick={closeMenu}>{title}</Link></li>
+              <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenu}/>
             )
-          })} */}
+          })}
         </ul>
 
         <h4>Presentaciones Agrimix</h4>
-        <ul className="menu__catalogue">
-          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FAgrimix%20Presentacion%20Espanol.pdf?alt=media" onClick={closeMenu}>Agrimix</Link></li>
-          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FPresentacion%20Agrimix.pdf?alt=media" onClick={closeMenu}>Productos 1</Link></li>
-          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FAgrimix%20-%20Presentacion%20Cuchillas-Extractor%20etc.pdf?alt=media" onClick={closeMenu}>Productos 2</Link></li>
-          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FPresentaci%C3%B3n%20del%20Mando%20Final%20COMER%20-%20Cosechadora%20de%20Ca%C3%B1a.pdf?alt=media" onClick={closeMenu}>Cosechadora De Caña</Link></li>
-          <li><Link to="https://firebasestorage.googleapis.com/v0/b/herracol-api-8820d.appspot.com/o/catalogue%2FAgrimix%2FCapuchones-convertido.pdf?alt=media" onClick={closeMenu}>Componentes De Cosechadora</Link></li>
-          {/* {catalogs.map(({id, title, link}) => {
+        <ul className="menu__catalog">
+          {catalogsAgrimix.map(({ id, name, url }) => {
             return (
-              <li key={id}><Link to={link} onClick={closeMenu}>{title}</Link></li>
+              <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenu}/>
             )
-          })} */}
+          })}
         </ul>
       </div>
     </MenuCategoryStyled>

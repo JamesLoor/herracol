@@ -49,6 +49,10 @@ const HomeStyled = styled.div`
     grid-gap: 10px;
   }
 
+  .hero__button {
+    width: min-content;
+  }
+
   .hero__content button {
     width: min-content;
     margin-top: 10px;
@@ -255,7 +259,7 @@ const Home = () => {
           <div className="hero__content">
             <h1>Quienes Somos</h1>
             <p className='hero__text'>Herracol S.A. es una empresa familiar fundada en Guayaquil – Ecuador el 13 de noviembre del 2000, dedicada a la importación y distribución de herramientas para la construcción, agricultura, jardinería e industria con cobertura en todo el territorio nacional. En nuestro portafolio de productos contamos con una línea de negocios y punto de venta de aluminio, vidrio y sus accesorios.</p>
-            <Link to="/contacto">
+            <Link className='hero__button' to='/contacto'>
               <Button>
                   Contactar
               </Button>

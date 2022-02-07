@@ -1,5 +1,6 @@
 import { Link as ReactRouterLink } from 'react-router-dom'
 import styled from 'styled-components'
+
 const ButtonStyled = styled.button`
   text-align: left;
 `
@@ -12,7 +13,7 @@ const Link = ({ children, to = '', className, ...props }) => {
       </ButtonStyled>
     )
   } else {
-    return <ReactRouterLink to={to} {...props}>{children}</ReactRouterLink>
+    return <ReactRouterLink className={className} to={to} {...props}>{children}</ReactRouterLink>
   }
 }
 
