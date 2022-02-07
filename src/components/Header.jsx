@@ -7,6 +7,7 @@ import { theme } from '../theme'
 import LogoSvgShort from '../assets/Group436.svg'
 
 import Menu from './Menu'
+import Link from './Link'
 
 const HeaderStyled = styled.div`
   width: 100%;
@@ -36,9 +37,11 @@ const Header = () => {
     <HeaderStyled>
       <Wrapper>
         <div className="header__container">
+        <Link to="/">
           <figure className="logo">
             <img src={LogoSvgShort} alt="Logo Herracol S.A" />
           </figure>
+        </Link>
 
           <Menu />
         </div>
