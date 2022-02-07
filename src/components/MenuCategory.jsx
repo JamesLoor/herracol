@@ -7,6 +7,7 @@ import { catalogsHerracol } from '../data/catalogsHerracol.data'
 import { catalogsAgrimix } from '../data/catalogsAgrimix.data'
 import { theme } from '../theme'
 import CategoryItemList from './CategoryItemList'
+import useProducts from '../hooks/useProducts'
 
 const MenuCategoryStyled = styled.div`
   .menu__category {
@@ -122,6 +123,7 @@ const MenuCategoryStyled = styled.div`
 `
 
 const MenuCategory = ({ className }) => {
+  const { getProductsByName } = useProducts()
   const [isOpen, setIsOpen] = useState(false)
   const openMenu = () => {
     setIsOpen(true)
@@ -129,6 +131,11 @@ const MenuCategory = ({ className }) => {
 
   const closeMenu = () => {
     setIsOpen(false)
+  }
+
+  const closeMenuCategory = () => {
+    setIsOpen(false)
+    getProductsByName('')
   }
 
   return (
@@ -144,7 +151,7 @@ const MenuCategory = ({ className }) => {
         <ul>
             {categories.map(({ id, name, url }) => {
               return (
-                <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenu}/>
+                <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenuCategory}/>
               )
             })}
         </ul>

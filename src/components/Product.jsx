@@ -65,17 +65,16 @@ const ProductStyled = styled.div`
     font-size: 12px;
     text-align: right;
     grid-area: code;
-    align-self: flex-end;
+    align-self: center;
   }
 
   .product__button {
-    width: 100px;
+    width: 120px;
     padding: 5px;
   }
 `
 
 const ProductModalStyled = styled.div`
-
   .modal__image {
     display: block;
     width: 100%;
