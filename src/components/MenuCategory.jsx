@@ -48,25 +48,6 @@ const MenuCategoryStyled = styled.div`
     gap: 10px;
   }
 
-  .category__item__list {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 20px;
-    padding: 7px 20px;
-    background-color: #151136;
-    color: ${theme.colors.white};
-    cursor: pointer;
-    height: 35px;
-  }
-
-  .category__item__list__icon {
-    overflow: hidden;
-  }
-
-  /* .category__item__list:hover {
-    color: ${theme.colors.link};
-  } */
-
   .overlay {
     position: fixed;
     top: 0;
@@ -158,9 +139,10 @@ const MenuCategory = ({ className }) => {
 
         <h4>Catálogo Herracol 2022</h4>
         <ul className="menu__catalog">
-          {catalogsHerracol.map(({ id, name, url }) => {
+          {
+            catalogsHerracol.map(({ id, name, url, type }) => {
             return (
-              <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenu}/>
+              <CategoryItemList key={id} name={name} type={type} url={url} closeMenu={closeMenu}/>
             )
           })}
         </ul>
