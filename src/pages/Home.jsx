@@ -6,8 +6,6 @@ import Button from '../components/Button'
 import Link from '../components/Link'
 import { TitleH2 } from '../globalStyles'
 import Footer from '../components/Footer'
-// import Value from '../components/Value'
-// import Testimonial from '../components/Testimonial'
 import logoAbro from '../assets/brands/logoAbro.png'
 import logoColima from '../assets/brands/logoColima.png'
 import logoGermany from '../assets/brands/logoGermany.png'
@@ -20,6 +18,10 @@ import logoSaintGobain from '../assets/brands/logoSaintGobain.png'
 import logoPractiagro from '../assets/brands/logoPractiagro.png'
 import logoNorton from '../assets/brands/logoNorton.png'
 import logoAgrimix from '../assets/brands/logoAgrimix.png'
+
+// Comment Please
+// import Value from '../components/Value'
+// import Testimonial from '../components/Testimonial'
 // import pruebaHistoria from '../assets/pruebaHistoria.png'
 
 const HomeStyled = styled.div`
@@ -47,6 +49,10 @@ const HomeStyled = styled.div`
   .hero__content {
     display: grid;
     grid-gap: 10px;
+  }
+
+  .hero__button {
+    width: min-content;
   }
 
   .hero__content button {
@@ -255,7 +261,7 @@ const Home = () => {
           <div className="hero__content">
             <h1>Quienes Somos</h1>
             <p className='hero__text'>Herracol S.A. es una empresa familiar fundada en Guayaquil – Ecuador el 13 de noviembre del 2000, dedicada a la importación y distribución de herramientas para la construcción, agricultura, jardinería e industria con cobertura en todo el territorio nacional. En nuestro portafolio de productos contamos con una línea de negocios y punto de venta de aluminio, vidrio y sus accesorios.</p>
-            <Link to="/contacto">
+            <Link className='hero__button' to='/contacto'>
               <Button>
                   Contactar
               </Button>
@@ -267,6 +273,7 @@ const Home = () => {
           </figure>
         </div>
 
+        {/* Comment Please  */}
         {/* <div className="values__container">
             <TitleH2 className="values_title">Nuestros Valores</TitleH2>
             <p className="values__container_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -299,6 +306,7 @@ const Home = () => {
             </figure>
         </div>
 
+        {/* Comment Please  */}
         {/* <div className="history__container">
           <figure className="history__figure">
             <img src={pruebaHistoria} alt=""/>

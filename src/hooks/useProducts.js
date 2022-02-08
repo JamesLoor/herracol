@@ -82,6 +82,7 @@ const useProducts = () => {
   return {
     // Constants
     list,
+    category,
     isListEmpty,
     isProductListEmpty,
     isLoading,

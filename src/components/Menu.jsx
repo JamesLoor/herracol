@@ -52,7 +52,6 @@ const MenuStyled = styled.div`
 
   .link__active {
     border-bottom: 2px solid ${theme.colors.accent};
-    border-bottom-left-radius: 5px;
   }
 
   @media (min-width: 768px) {

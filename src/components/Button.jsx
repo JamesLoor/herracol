@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { theme } from '../theme'
 
 const ButtonStyled = styled.button`
-  min-width: 150px;
   border-radius: 20px;
   padding: 10.5px 21px;
   text-align: center;
