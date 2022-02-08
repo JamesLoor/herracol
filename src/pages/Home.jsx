@@ -6,8 +6,6 @@ import Button from '../components/Button'
 import Link from '../components/Link'
 import { TitleH2 } from '../globalStyles'
 import Footer from '../components/Footer'
-// import Value from '../components/Value'
-// import Testimonial from '../components/Testimonial'
 import logoAbro from '../assets/brands/logoAbro.png'
 import logoColima from '../assets/brands/logoColima.png'
 import logoGermany from '../assets/brands/logoGermany.png'
@@ -20,6 +18,10 @@ import logoSaintGobain from '../assets/brands/logoSaintGobain.png'
 import logoPractiagro from '../assets/brands/logoPractiagro.png'
 import logoNorton from '../assets/brands/logoNorton.png'
 import logoAgrimix from '../assets/brands/logoAgrimix.png'
+
+// Comment Please
+// import Value from '../components/Value'
+// import Testimonial from '../components/Testimonial'
 // import pruebaHistoria from '../assets/pruebaHistoria.png'
 
 const HomeStyled = styled.div`
@@ -271,6 +273,7 @@ const Home = () => {
           </figure>
         </div>
 
+        {/* Comment Please  */}
         {/* <div className="values__container">
             <TitleH2 className="values_title">Nuestros Valores</TitleH2>
             <p className="values__container_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -303,6 +306,7 @@ const Home = () => {
             </figure>
         </div>
 
+        {/* Comment Please  */}
         {/* <div className="history__container">
           <figure className="history__figure">
             <img src={pruebaHistoria} alt=""/>
