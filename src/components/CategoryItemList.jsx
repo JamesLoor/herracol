@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Link from './Link'
 import Icon from './Icon'
 import { theme } from '../theme'
-import { useSearchParams } from 'react-router-dom'
 import useProducts from '../hooks/useProducts'
 
 const CategoryItemListStyled = styled.li`
@@ -12,7 +11,7 @@ const CategoryItemListStyled = styled.li`
     justify-content: space-between;
     border-radius: 20px;
     padding: 7px 20px;
-    background-color: #151136;
+    background-color: ${theme.colors.primaryDark};
     color: ${theme.colors.white};
     cursor: pointer;
     height: 35px;

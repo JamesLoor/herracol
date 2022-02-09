@@ -20,7 +20,7 @@ const MenuCategoryStyled = styled.div`
     bottom: 0;
     z-index: 99;
     padding: 20px;
-    background-color: #100d28;
+    background-color: ${theme.colors.primary};
     grid-gap: 17.5px;
   }
 
@@ -71,7 +71,7 @@ const MenuCategoryStyled = styled.div`
       bottom: 0;
       position: sticky;
       display: grid;
-      background-color: #100d28;
+      background-color: ${theme.colors.primary};
     }
 
     .menu__point {
@@ -84,7 +84,7 @@ const MenuCategoryStyled = styled.div`
   }
 
   @media (max-width: 768px) {
-    @media (max-height: 810px) {
+    @media (max-height: 1460px) {
       .menu__category {
         height: calc(100vh - 60px);
         overflow-y: scroll;
@@ -93,7 +93,7 @@ const MenuCategoryStyled = styled.div`
   }
 
   @media (min-width: 768px) {
-    @media (max-height: 810px) {
+    @media (max-height: 1460px) {
       .menu__category {
         height: calc(100vh - 100px);
         overflow-y: scroll;
