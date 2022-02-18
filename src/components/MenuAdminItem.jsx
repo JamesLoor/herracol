@@ -3,13 +3,12 @@ import styled from 'styled-components'
 import Link from './Link'
 import Icon from './Icon'
 import { theme } from '../theme'
-import useProducts from '../hooks/useProducts'
 
-const CategoryItemListStyled = styled.li`
+const MenuAdminItemStyled = styled.div`
   .item__list {
     display: flex;
     justify-content: space-between;
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 7px 20px;
     background-color: ${theme.colors.primaryDark};
     color: ${theme.colors.white};
@@ -38,18 +37,14 @@ const CategoryItemListStyled = styled.li`
   }
 `
 
-const CategoryItemList = ({ name, path, closeMenu, type }) => {
-  const { category } = useProducts()
-  const removeAccents = (str) => {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  }
-  const isMatch = removeAccents(name.toLowerCase()).replace(' ', '-') === category.toLowerCase()
+const MenuAdminItem = ({ name, url, closeMenu, type }) => {
   return (
-    <CategoryItemListStyled>
+    <MenuAdminItemStyled>
       <Link
-        to={path}
+        to={url}
         onClick={closeMenu}
-        className={isMatch ? "item__list active" : "item__list"}
+        // className={isMatch ? "item__list active" : "item__list"}
+        className="item__list"
       >
         {name}
         <Icon
@@ -59,8 +54,8 @@ const CategoryItemList = ({ name, path, closeMenu, type }) => {
           color="white"
         />
       </Link>
-    </CategoryItemListStyled>
+    </MenuAdminItemStyled>
   )
 }
 
-export default CategoryItemList
+export default MenuAdminItem

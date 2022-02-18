@@ -25,6 +25,7 @@ const MenuCategoryStyled = styled.div`
   }
 
   .menu__category::-webkit-scrollbar {
+    -webkit-appearance: none;
     width: 5px;
     height: 5px;
   }

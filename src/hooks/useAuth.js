@@ -6,10 +6,11 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const useAuth = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const user = useSelector(store => store.auth.user)
+  const error = useSelector(store => store.auth.error)
   const loading = useSelector(store => store.auth.loading)
-  const navigate = useNavigate()
 
   useEffect(() => {
     onAuthStateChanged(auth, currentUser => {
@@ -21,12 +22,30 @@ const useAuth = () => {
     dispatch(actions.authLoading())
 
     try {
-      if(email && password) {
-        await signInWithEmailAndPassword(auth, email, password)
-        navigate('/admin')
-      }
+      await signInWithEmailAndPassword(auth, email, password)
     } catch(error) {
-      console.error(error)
+      switch(error.code) {
+        case 'auth/wrong-password':
+          dispatch(actions.authError({
+            code: error.code,
+            message: 'Contraseña incorrecta'
+          }))
+          break;
+        case 'auth/user-not-found':
+          dispatch(actions.authError({
+            code: error.code,
+            message: 'Correo no existe'
+          }))
+          break;
+        case 'auth/too-many-requests':
+          dispatch(actions.authError({
+            code: error.code,
+            message: 'Cuenta inhabilitada temporalmente, intente mas tarde.'
+          }))
+          break;
+        default:
+          return null
+      }
     }
   }
 
@@ -36,6 +55,7 @@ const useAuth = () => {
     try {
       if(user) {
         await signOut(auth)
+        navigate('/login')
       }
     } catch(error) {
       console.error(error)
@@ -44,6 +64,7 @@ const useAuth = () => {
 
   return {
     user,
+    error,
     loading,
 
     login,

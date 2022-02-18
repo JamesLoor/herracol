@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import * as Yup from 'yup'
 import axios from 'axios'
+import * as Yup from 'yup'
 import Icon from './Icon'
 import { useFormik } from 'formik'
 import styled from 'styled-components'
 import Input from './Input'
-import Button from './Button'
 import Textarea from './Textarea'
+import Button from './Button'
 import { theme } from '../theme'
 import Modal from './Modal'
 import useModal from '../hooks/useModal'
@@ -125,14 +125,14 @@ const ContactForm = ({ className }) => {
       data: values
     })
       .then(response => {
-        actions.setSubmitting(false);
-        actions.resetForm();
-        handleServerResponse(true, "Thanks!");
+        actions.setSubmitting(false)
+        actions.resetForm()
+        handleServerResponse(true, "Thanks!")
         openModal()
       })
       .catch(error => {
-        actions.setSubmitting(false);
-        handleServerResponse(false, error.response.data.error);
+        actions.setSubmitting(false)
+        handleServerResponse(false, error.response.data.error)
         openModal()
       })
   }

@@ -2,9 +2,14 @@
 const AUTH_LOGIN = 'AUTH_LOGIN'
 const AUTH_LOGOUT = 'AUTH_LOGIN'
 const AUTH_LOADING = 'AUTH_LOADING'
+const AUTH_ERROR = 'AUTH_ERROR'
 
 const initialState = {
   user: {},
+  error: {
+    code: '',
+    message: '',
+  },
   loading: false
 }
 
@@ -13,16 +18,22 @@ export const authReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case AUTH_LOGIN: {
       return {
-        ...state,
         user: payload,
+        error: {
+          code: '',
+          message: ''
+        },
         loading: false
       }
     }
 
     case AUTH_LOGOUT: {
       return {
-        ...state,
         user: {},
+        error: {
+          code: '',
+          message: ''
+        },
         loading: false,
       }
     }
@@ -30,7 +41,19 @@ export const authReducer = (state = initialState, { type, payload }) => {
     case AUTH_LOADING: {
       return {
         ...state,
+        error: {
+          code: '',
+          message: ''
+        },
         loading: true,
+      }
+    }
+
+    case AUTH_ERROR: {
+      return {
+        ...state,
+        error: payload,
+        loading: false
       }
     }
 
@@ -57,6 +80,13 @@ export const actions = {
   authLoading: () => {
     return {
       type: AUTH_LOADING
+    }
+  },
+
+  authError: (error) => {
+    return {
+      type: AUTH_ERROR,
+      payload: error
     }
   }
 }

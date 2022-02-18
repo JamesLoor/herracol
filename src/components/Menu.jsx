@@ -33,7 +33,7 @@ const MenuStyled = styled.div`
     align-items: center;
     text-align: center;
     z-index: ${theme.positions.menu};
-    background-color: ${theme.colors.secundaryDark};
+    background-color: ${theme.colors.primary};
   }
 
   .menu__nav ul {
