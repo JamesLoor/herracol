@@ -28,7 +28,7 @@ const HeaderAdminStyled = styled.div`
 
   @media (min-width: 1024px) {
     & {
-      padding: 20px 2% 0 285px;
+      padding: 20px 20px 0 285px;
     }
   }
 `

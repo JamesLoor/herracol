@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { WrapperAdmin } from '../../globalStyles'
+import Box from '../../components/Box'
 
 const UsersAdminStyled = styled.div`
   /*  */
@@ -10,7 +11,9 @@ const UsersAdmin = () => {
   return (
     <UsersAdminStyled>
       <WrapperAdmin>
-        <h1>UsersAdmin</h1>
+        <Box>
+        
+        </Box>
       </WrapperAdmin>
     </UsersAdminStyled>
   )
