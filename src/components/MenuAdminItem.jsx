@@ -8,7 +8,7 @@ const MenuAdminItemStyled = styled.div`
   .item__list {
     display: flex;
     justify-content: space-between;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 7px 20px;
     background-color: ${theme.colors.primaryDark};
     color: ${theme.colors.white};
