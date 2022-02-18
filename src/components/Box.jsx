@@ -8,6 +8,8 @@ const BoxStyled = styled.div`
   border-radius: 8px;
   padding: 20px;
   width: 100%;
+  display: grid;
+  gap: 20px;
 `
 
 const Box = ({ children }) => {
