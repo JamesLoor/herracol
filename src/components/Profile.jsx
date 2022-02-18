@@ -44,7 +44,7 @@ const ProfileStyled = styled.div`
   }
 
   .profile__dropdown {
-    display: flex;
+    display: ${({ isOpen }) => isOpen ? 'flex' : 'none'};
     opacity: ${({ isOpen }) => isOpen ? '1' : '0'};
     top: ${({ isOpen }) => isOpen ? '140%' : '150%'};
     transition: .3s;
