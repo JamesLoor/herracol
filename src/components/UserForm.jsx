@@ -101,7 +101,7 @@ const UserForm = ({ isOpen, closeForm }) => {
   })
   const onSubmit = async (values, actions) => {
     createUser(values)
-    // actions.resetForm()
+    actions.resetForm()
   }
   const formik = useFormik({ initialValues, validationSchema, onSubmit })
   const cancelForm = () => {

@@ -131,9 +131,9 @@ const MenuCategory = ({ className }) => {
       <div className="menu__category">
         <h3>Categorias</h3>
         <ul>
-            {categories.map(({ id, name, url }) => {
+            {categories.map(({ id, name, path }) => {
               return (
-                <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenuCategory}/>
+                <CategoryItemList key={id} name={name} path={path} closeMenu={closeMenuCategory}/>
               )
             })}
         </ul>

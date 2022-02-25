@@ -21,6 +21,8 @@ export const theme = {
     header: 990,
     menuIconClose: 980,
     menu: 970,
+    overlay: 960,
     menuProducts: 960,
+    headerAdmin: 950,
   }
 }
