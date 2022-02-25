@@ -10,52 +10,35 @@ import Button from './Button'
 import { theme } from '../theme'
 import Modal from './Modal'
 import useModal from '../hooks/useModal'
+import Box from './Box'
 
 const ContactFormStyled = styled.div`
   .form__title {
-    font-size: 36px;
-    font-weight: 1000;
+    font-size: 25px;
+    font-weight: 700;
     color: ${theme.colors.black};
-    margin-bottom: 20px;
+    text-align: center;
   }
 
   .form__container {
     display: grid;
-    grid-template-areas:
-      "name"
-      "email"
-      "message"
-      "button";
-    gap: 8px;
-  }
-
-  .input__name {
-    grid-area: name;
-  }
-
-  .input__email {
-    grid-area: email;
-  }
-
-  .input__message {
-    grid-area: message;
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .form__button {
-    margin-top: 12px;
     width: 150px;
-    grid-area: button;
+    text-align: center;
+    justify-self: center;
   }
 
   @media (min-width: 768px) {
-    .form__container {
-      display: grid;
-      grid-template-columns: .5fr 1fr;
-      grid-template-areas:
-        "name email"
-        "message message"
-        "button button";
-      gap: 8px;
+    .contact__box {
+      width: 350px;
+      padding: 30px;
+      position: absolute;
+      top: 180px;
+      right: 4%;
     }
   }
 `
@@ -141,45 +124,46 @@ const ContactForm = ({ className }) => {
   return (
     <>
       <ContactFormStyled className={className}>
-        <h2 className="form__title">Dejanos un mensaje</h2>
-
-        <form onSubmit={formik.handleSubmit} className="form__container">
-            <Input
-              label="Nombre"
-              id="name"
-              name="name"
-              type="text"
-              className="input__name"
-              onChange={formik.handleChange}
-              value={formik.values.name}
-              error={formik.errors.name}
-              touched={formik.touched.name}
-            />
-            <Input
-              label="Correo electrónico"
-              id="email"
-              name="email"
-              type="email"
-              className="input__email"
-              onChange={formik.handleChange}
-              value={formik.values.email}
-              error={formik.errors.email}
-              touched={formik.touched.email}
-            />
-            <Textarea
-              rows="5"
-              label="Mensaje"
-              id="message"
-              name="message"
-              type="text"
-              className="input__message"
-              onChange={formik.handleChange}
-              value={formik.values.message}
-              error={formik.errors.message}
-              touched={formik.touched.message}
-            />
-            <Button className="form__button" type="submit">Enviar</Button>
-        </form>
+        <Box className="contact__box">
+          <h2 className="form__title">Contáctanos</h2>
+          <form onSubmit={formik.handleSubmit} className="form__container">
+              <Input
+                label="Nombre"
+                id="name"
+                name="name"
+                type="text"
+                className="input__name"
+                onChange={formik.handleChange}
+                value={formik.values.name}
+                error={formik.errors.name}
+                touched={formik.touched.name}
+              />
+              <Input
+                label="Correo electrónico"
+                id="email"
+                name="email"
+                type="email"
+                className="input__email"
+                onChange={formik.handleChange}
+                value={formik.values.email}
+                error={formik.errors.email}
+                touched={formik.touched.email}
+              />
+              <Textarea
+                rows="5"
+                label="Mensaje"
+                id="message"
+                name="message"
+                type="text"
+                className="input__message"
+                onChange={formik.handleChange}
+                value={formik.values.message}
+                error={formik.errors.message}
+                touched={formik.touched.message}
+              />
+              <Button className="form__button" type="submit">Enviar</Button>
+          </form>
+        </Box>
       </ContactFormStyled>
       {
         isOpen &&

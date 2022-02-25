@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Wrapper } from '../globalStyles'
 import { theme } from '../theme'
-import LogoSvgShort from '../assets/Group436.svg'
+import LogoSvgShort from '../assets/logoHerracolSA.png'
 
 import Menu from './Menu'
 import Link from './Link'
