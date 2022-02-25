@@ -131,7 +131,7 @@ const MenuAdmin = ({ className }) => {
               )
             })}
         </ul>
-        </div>
+      </div>
     </MenuAdminStyled>
   )
 }

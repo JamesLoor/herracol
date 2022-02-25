@@ -5,32 +5,28 @@ import { theme } from '../theme'
 const UserItemStyled = styled.div`
   border-bottom: 2px solid ${theme.colors.primaryDark};
   display: grid;
-  grid-template-columns: repeat(4, 200px);
   padding: 10px 20px;
   text-align: left;
+
+  .data__user {
+    width: 100%;
+    overflow-x: scroll;
+  }
 
   .data__user span{
     font-size: 14px;
     color: ${theme.colors.secundaryLight};
   }
-
-  @media (min-width: 768px) {
-    /* grid-template-columns: repeat(4, 1fr); */
-  }
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
-    width: 100%;
-   }
 `
 
-const UserItem = ({ diplayName, email, rol, status }) => {
+const UserItem = ({ diplayName, email, role, status, gridClass }) => {
   return (
-    <UserItemStyled>
+    <UserItemStyled className={gridClass}>
       <div className="data__user">
-        <p>{diplayName}</p>
+        <p className="displayName">{diplayName}</p>
         <span>{email}</span>
       </div>
-      <p>{rol}</p>
+      <p>{role}</p>
       <p>{status}</p>
       <div>
         <span>I</span>

@@ -79,15 +79,15 @@ const ProfileStyled = styled.div`
 `
 
 const Profile = () => {
-  const { logout } = useAuth()
+  const { user, logout } = useAuth()
   const { isDropdownOpen, closeDropdown, toggleDropdown } = useDropdown()
 
   return (
     <OutsideClickHandler onOutsideClick={closeDropdown}>
       <ProfileStyled isOpen={isDropdownOpen} onClick={toggleDropdown}>
         <div className="profile__info">
-          <p className="username">James Mendoza</p>
-          <p className="role">Admin</p>
+          <p className="username">{user.username}</p>
+          <p className="role">{user.role}</p>
         </div>
         <div className="avatar">
           <img src={AvatarDefault} alt="Avatar" />

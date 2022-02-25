@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../redux/authDucks'
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
-import { auth } from '../firebase'
+import { auth, store } from '../firebase'
+import { getDoc, doc, query, where, collection, getDocs } from 'firebase/firestore'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -13,8 +14,17 @@ const useAuth = () => {
   const loading = useSelector(store => store.auth.loading)
 
   useEffect(() => {
-    onAuthStateChanged(auth, currentUser => {
-      dispatch(actions.authLogin(currentUser))
+    onAuthStateChanged(auth, async (currentUser) => {
+      if(currentUser !== null) {
+        const usersRef = collection(store, "Users")
+        const q = query(usersRef, where("uid", "==", currentUser.uid))
+        const querySnapshot = await getDocs(q)
+        querySnapshot.forEach(user => {
+          dispatch(actions.authLogin(user.data()))
+        })
+      } else {
+        dispatch(actions.authLogin(currentUser))
+      }
     })
   }, [dispatch])
 

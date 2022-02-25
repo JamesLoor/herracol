@@ -4,10 +4,12 @@ import thunk from 'redux-thunk'
 
 import { productReducer } from './productDucks'
 import { authReducer } from './authDucks'
+import { userReducer } from './userDuck'
 
 const rootReducer = combineReducers({
   auth: authReducer,
   product: productReducer,
+  user: userReducer,
 })
 
 const composeEnhancers = composeWithDevTools(
