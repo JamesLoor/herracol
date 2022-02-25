@@ -7,7 +7,9 @@ import UserItem from './UserItem'
 import useUser from '../hooks/useUser'
 
 const UserListStyled = styled.div`
-  overflow-x: scroll;
+  @media (max-width: 1024px) {
+    overflow-x: scroll;
+  }
 
   .user__list__title {
     background-color: ${theme.colors.primaryDark};
@@ -18,11 +20,11 @@ const UserListStyled = styled.div`
   }
 
   .grid__column {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: 250px repeat(3, 200px);
 
     @media (min-width: 1024px) {
       width: 100%;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1.5fr repeat(3, 1fr);
     }
   }
 

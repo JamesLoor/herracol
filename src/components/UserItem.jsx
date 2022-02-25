@@ -10,7 +10,6 @@ const UserItemStyled = styled.div`
 
   .data__user {
     width: 100%;
-    overflow-x: scroll;
   }
 
   .data__user span{
