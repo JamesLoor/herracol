@@ -29,6 +29,7 @@ const MenuAdminStyled = styled.div`
     padding: 20px;
     background-color: ${theme.colors.primary};
     grid-gap: 17.5px;
+    z-index: ${theme.positions.menu};
   }
 
   .nav__header {
@@ -61,6 +62,7 @@ const MenuAdminStyled = styled.div`
     bottom: 0;
     background-color: ${theme.colors.modalBackground};
     cursor: pointer;
+    z-index: ${theme.positions.overlay};
   }
 
   @media (min-width: 1024px) {

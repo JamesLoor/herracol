@@ -69,31 +69,30 @@ const useUser = () => {
   }
 
   const createUser = async (data) => {
-    console.log(data)
-    // try {
-    //   const userRef = await createUserWithEmailAndPassword(auth, data.email, data.password)
-    //   const userDoc = {
-    //     uid: userRef.user.uid,
-    //     username: data.username,
-    //     email: data.email,
-    //     phoneNumber: data.phoneNumber,
-    //     role: data.role,
-    //   }
-    //   await addDoc(collection(store, "Users"), userDoc)
-    // } catch(error) {
-    //   console.log(error)
-    //   console.error(error)
-    //   switch(error.code) {
-    //     case 'auth/email-already-in-use':
-    //       dispatch(actions.userError({
-    //         code: error.code,
-    //         message: 'Correo no disponible'
-    //       }))
-    //       break;
-    //     default:
-    //       return null
-    //   }
-    // }
+    try {
+      const userRef = await createUserWithEmailAndPassword(auth, data.email, data.password)
+      const userDoc = {
+        uid: userRef.user.uid,
+        username: data.username,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        role: data.role,
+      }
+      await addDoc(collection(store, "Users"), userDoc)
+    } catch(error) {
+      console.log(error)
+      console.error(error)
+      switch(error.code) {
+        case 'auth/email-already-in-use':
+          dispatch(actions.userError({
+            code: error.code,
+            message: 'Correo no disponible'
+          }))
+          break;
+        default:
+          return null
+      }
+    }
   }
 
   const deleteUser = async (uid) => {

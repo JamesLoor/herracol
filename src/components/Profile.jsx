@@ -5,8 +5,6 @@ import { theme } from '../theme'
 import AvatarDefault from '../assets/Avatar.jpg'
 import useDropdown from '../hooks/useDropdown'
 import OutsideClickHandler from 'react-outside-click-handler'
-import { useAnimate } from 'react-simple-animate'
-
 
 const ProfileStyled = styled.div`
   position: relative;
@@ -17,6 +15,7 @@ const ProfileStyled = styled.div`
   color: ${theme.colors.white};
   text-align: right;
   cursor: pointer;
+  z-index: ${theme.positions.headerAdmin};
 
   .username {
     font-size: 16px;
@@ -45,11 +44,8 @@ const ProfileStyled = styled.div`
 
   .profile__dropdown {
     display: ${({ isOpen }) => isOpen ? 'flex' : 'none'};
-    opacity: ${({ isOpen }) => isOpen ? '1' : '0'};
-    top: ${({ isOpen }) => isOpen ? '140%' : '150%'};
+    top: 140%;
     transition: .3s;
-    transition-property: top, opacity;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     position: absolute;
     border-radius: 8px;
     right: 0;
