@@ -10,6 +10,17 @@ const UserItemStyled = styled.div`
 
   .data__user {
     width: 100%;
+    overflow-x: scroll;
+  }
+
+  .data__user::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 3px;
+    height: 3px;
+  }
+
+  .data__user::-webkit-scrollbar-thumb {
+    background: ${theme.colors.secundaryDark};
   }
 
   .data__user span{
