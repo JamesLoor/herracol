@@ -10,7 +10,7 @@ const CategoriesAdmin = () => {
   return (
     <CategoriesAdminStyled>
       <WrapperAdmin>
-        <h1>CategoriesAdmin</h1>
+        <h1>Muy pronto se podra Crear, Editar y Eliminar Categorias desde esta sección</h1>
       </WrapperAdmin>
     </CategoriesAdminStyled>
   )

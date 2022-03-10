@@ -1,9 +1,9 @@
 export const itemsMenuAdmin = [
-  {
-    id: '001',
-    path: '/admin/usuarios',
-    name: 'Usuarios',
-  },
+  // {
+  //   id: '001',
+  //   path: '/admin/usuarios',
+  //   name: 'Usuarios',
+  // },
   {
     id: '002',
     path: '/admin/productos',

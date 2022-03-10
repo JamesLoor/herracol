@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState } from 'react'
-import { collection, addDoc, getDocs } from 'firebase/firestore'
+import { collection, addDoc } from 'firebase/firestore'
 import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../redux/productDucks'
 import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage'

@@ -9,17 +9,16 @@ import {
 import Home from '../pages/Home'
 import Products from '../pages/Products'
 import Contact from '../pages/Contact'
-import Question from '../pages/Question';
+import Question from '../pages/Question'
 import NotFound from '../pages/NotFound'
-import Login from '../pages/Login';
+import Login from '../pages/Login'
 import Layout from '../components/Layout'
-import PrivateRoute from '../components/PrivateRoute';
+import PrivateRoute from '../components/PrivateRoute'
 
-import LayoutAdmin from '../components/LayoutAdmin';
-import HomeAdmin from '../pages/admin/HomeAdmin';
-import UsersAdmin from '../pages/admin/UsersAdmin';
-import ProductsAdmin from '../pages/admin/ProductsAdmin';
-import CategoriesAdmin from '../pages/admin/CategoriesAdmin';
+import LayoutAdmin from '../components/LayoutAdmin'
+import HomeAdmin from '../pages/admin/HomeAdmin'
+import ProductsAdmin from '../pages/admin/ProductsAdmin'
+import CategoriesAdmin from '../pages/admin/CategoriesAdmin'
 
 const Wrapper = ({children}) => {
   const location = useLocation();
@@ -50,7 +49,7 @@ const RouterMain = () => {
             </PrivateRoute>
           }>
             <Route index element={<HomeAdmin />} />
-            <Route path="usuarios" element={<UsersAdmin />} />
+            {/* <Route path="usuarios" element={<UsersAdmin />} /> */}
             <Route path="productos" element={<ProductsAdmin />} />
             <Route path="categorias" element={<CategoriesAdmin />} />
           </Route>

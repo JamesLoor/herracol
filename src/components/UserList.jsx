@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
-import { userList } from '../data/mock/userList.data.mock'
 import UserItem from './UserItem'
 import useUser from '../hooks/useUser'
 
@@ -13,6 +12,7 @@ const UserListStyled = styled.div`
 
   .user__list__title {
     background-color: ${theme.colors.primaryDark};
+    color: ${theme.colors.white};
     display: grid;
     padding: 10px 20px;
     border-radius: 20px;
@@ -27,7 +27,6 @@ const UserListStyled = styled.div`
       grid-template-columns: 1.5fr repeat(3, 1fr);
     }
   }
-
 
   .user__list__data {
     display: grid;

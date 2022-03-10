@@ -2,6 +2,8 @@
 const FETCH_USERS = 'FETCH_USERS'
 const GET_USERS = 'GET_USERS'
 const GET_USERS_BY_NAME = 'GET_USERS_BY_NAME'
+const ADD_USER = 'ADD_USER'
+const REMOVE_USER = 'REMOVE_USER'
 const LOADING = 'LOADING'
 const USER_ERROR = 'USER_ERROR'
 
@@ -52,6 +54,21 @@ export const userReducer = (state = initialState, { type, payload }) => {
       }
     }
 
+    case ADD_USER: {
+      return {
+        ...state,
+        isLoading: false,
+        all: [...state.all, payload]
+      }
+    }
+
+    case REMOVE_USER: {
+      const filteredUserList = state.all.filter(
+        (user) => user.uid !== payload
+      )
+      return { ...state, all: filteredUserList }
+    }
+
     case USER_ERROR: {
       return {
         ...state,
@@ -88,11 +105,24 @@ export const actions = {
     }
   },
 
-
   getUsersByName: (name) => {
     return {
       type: GET_USERS_BY_NAME,
       payload: name
+    }
+  },
+
+  addUser: (user) => {
+    return {
+      type: ADD_USER,
+      payload: user
+    }
+  },
+
+  removeUser: (id) => {
+    return {
+      type: REMOVE_USER,
+      payload: id
     }
   },
 

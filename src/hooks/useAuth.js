@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../redux/authDucks'
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth, store } from '../firebase'
-import { getDoc, doc, query, where, collection, getDocs } from 'firebase/firestore'
+import { query, where, collection, getDocs } from 'firebase/firestore'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 

@@ -1,10 +1,12 @@
 export const role = [
   {
     id: '001',
-    name: 'Admin'
+    label: 'Admin',
+    value: 'admin'
   },
   {
     id: '002',
-    name: 'Client'
+    label: 'Cliente',
+    value: 'cliente'
   },
 ]

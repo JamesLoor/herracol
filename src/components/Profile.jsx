@@ -91,7 +91,6 @@ const Profile = () => {
         <div className="profile__dropdown">
           <h5>Opciones</h5>
           <ul>
-            <li><button type="button" onClick={() => {}}>Perfil</button></li>
             <li><button type="button" onClick={logout}>Cerrar Sesión</button></li>
           </ul>
         </div>

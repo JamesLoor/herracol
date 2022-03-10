@@ -10,7 +10,7 @@ const ProductsAdmin = () => {
   return (
     <ProductsAdminStyled>
       <WrapperAdmin>
-        <h1>ProductsAdmin</h1>
+        <h1>Muy pronto se podra Crear, Editar y Eliminar Productos desde esta sección</h1>
       </WrapperAdmin>
     </ProductsAdminStyled>
   )

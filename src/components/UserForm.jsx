@@ -142,9 +142,8 @@ const UserForm = ({ isOpen, closeForm }) => {
           type="text"
           options={role}
           className="input__role"
-          onChange={(selectedOption) => {
-            console.log(selectedOption)
-            formik.setFieldValue('role', selectedOption)
+          onChange={(event) => {
+            formik.setFieldValue('role', event.target.value)
           }}
           value={formik.values.role}
           error={formik.errors.role}

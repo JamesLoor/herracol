@@ -1,71 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { WrapperAdmin } from '../../globalStyles'
-import useAuth from '../../hooks/useAuth'
 
 const HomeAdminStyled = styled.div`
 `
 
 const HomeAdmin = () => {
-  const { logout } = useAuth()
-
   return (
     <HomeAdminStyled>
       <WrapperAdmin>
-        <h1>Hello</h1>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <h1>Muy pronto se podra Observar analiticas e información sobre el uso de la Aplicación</h1>
       </WrapperAdmin>
     </HomeAdminStyled>
   )

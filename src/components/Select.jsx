@@ -44,7 +44,7 @@ const SelectStyled = styled.label`
   }
 `
 
-const Select = ({ id, className, options, label, error, touched, ...rest }) => {
+const Select = ({ id, className, defaultValue, options, label, error, touched, ...rest }) => {
   return (
     <SelectStyled
       className={`${className} ${touched && error && 'labelError'}`}
@@ -56,9 +56,10 @@ const Select = ({ id, className, options, label, error, touched, ...rest }) => {
         className={`select ${touched && error && 'inputError'}`}
         {...rest}
       >
-        {options.map(({ id, name, type }) => {
+        <option hidden value=""></option>
+        {options.map(({ id, label, value }, i) => {
           return (
-            <option key={id} id={id} value={type ? type : name}>{name}</option>
+            <option key={id} id={id} value={value}>{label}</option>
           )
         })}
       </select>

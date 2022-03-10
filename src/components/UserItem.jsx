@@ -25,7 +25,7 @@ const UserItemStyled = styled.div`
 
   .data__user span{
     font-size: 14px;
-    color: ${theme.colors.secundaryLight};
+    color: ${theme.colors.secundaryDark};
   }
 `
 

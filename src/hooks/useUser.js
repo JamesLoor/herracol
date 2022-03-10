@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../redux/userDuck'
 import { auth, store } from '../firebase'
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { collection, getDocs, addDoc } from 'firebase/firestore'
 
 const useUser = () => {
@@ -78,10 +78,12 @@ const useUser = () => {
         phoneNumber: data.phoneNumber,
         role: data.role,
       }
-      await addDoc(collection(store, "Users"), userDoc)
+      const userId = await addDoc(collection(store, "Users"), userDoc)
+      const { id } = userId
+      console.log(userId)
+      console.log(id)
     } catch(error) {
       console.log(error)
-      console.error(error)
       switch(error.code) {
         case 'auth/email-already-in-use':
           dispatch(actions.userError({
