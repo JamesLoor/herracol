@@ -143,7 +143,7 @@ const MenuCategory = ({ className }) => {
           {
             catalogsHerracol.map(({ id, name, url, type }) => {
             return (
-              <CategoryItemList key={id} name={name} type={type} url={url} closeMenu={closeMenu}/>
+              <CategoryItemList key={id} name={name} type={type} path={url} closeMenu={closeMenu}/>
             )
           })}
         </ul>
@@ -152,7 +152,7 @@ const MenuCategory = ({ className }) => {
         <ul className="menu__catalog">
           {catalogsAgrimix.map(({ id, name, url }) => {
             return (
-              <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenu}/>
+              <CategoryItemList key={id} name={name} path={url} closeMenu={closeMenu}/>
             )
           })}
         </ul>
