@@ -30,6 +30,12 @@ export const categories = [
     path: '/productos/cuchillas'
   },
   {
+    id: 'categories-021',
+    type: 'cadenas',
+    name: 'Cadenas',
+    path: '/productos/cadenas'
+  },
+  {
     id: 'categories-018',
     type: 'discos',
     name: 'Discos',
