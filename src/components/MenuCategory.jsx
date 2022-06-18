@@ -8,6 +8,7 @@ import { catalogsAgrimix } from '../data/catalogsAgrimix.data'
 import { theme } from '../theme'
 import CategoryItemList from './CategoryItemList'
 import useProducts from '../hooks/useProducts'
+import { catalogsBosco } from '../data/catalogsBosco.data'
 
 const MenuCategoryStyled = styled.div`
   .menu__category {
@@ -145,6 +146,16 @@ const MenuCategory = ({ className }) => {
             return (
               <CategoryItemList key={id} name={name} type={type} path={url} closeMenu={closeMenu}/>
             )
+          })}
+        </ul>
+
+        <h4>Catálogo Bosco</h4>
+        <ul className="menu__catalog">
+          {
+            catalogsBosco.map(({ id, name, url, type }) => {
+              return (
+                <CategoryItemList key={id} name={name} type={type} path={url} closeMenu={closeMenu}/>
+              )
           })}
         </ul>
 
