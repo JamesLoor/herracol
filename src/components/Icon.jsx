@@ -8,7 +8,7 @@ const SvgStyled = styled.svg`
   align-self: center;
 `
 
-const Icon = ({ icon, width, height, color, className }) => {
+const Icon = ({ icon, width, height, color, className, stroke }) => {
   return (
     <SvgStyled
       className={className}
@@ -16,7 +16,7 @@ const Icon = ({ icon, width, height, color, className }) => {
       height={`${height}`}
       viewBox={`0 0 30 30`}
     >
-      <path fill={color} d={IconsPath[icon]}/>
+      <path fill={color} d={IconsPath[icon]} stroke={stroke && color} fillRule="evenodd" clipRule="evenodd"/>
     </SvgStyled>
   )
 }

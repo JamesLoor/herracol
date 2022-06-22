@@ -1,6 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { collection, addDoc } from 'firebase/firestore'
 import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../redux/productDucks'
+import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage'
+import { store, storage } from '../firebase'
 
 const useProducts = () => {
   const dispatch = useDispatch()
@@ -41,6 +44,22 @@ const useProducts = () => {
     } catch(error) {
       console.error(error)
     }
+    // dispatch(actions.loading())
+    // try {
+    //   if(isProductListEmpty) {
+    //     const products = []
+    //     const query = collection(store, "Products")
+    //     const querySnapshot = await getDocs(query)
+    //     querySnapshot.forEach((doc) => {
+    //       const data = doc.data()
+    //       const product = { id: doc.id , ...data}
+    //       products.push(product)
+    //     })
+    //     dispatch(actions.fetchProducts(products))
+    //   }
+    // } catch(error) {
+    //   console.error(error)
+    // }
   }
 
   const getAllProducts = () => {
@@ -79,6 +98,37 @@ const useProducts = () => {
     }
   }
 
+  const createProduct = async (data) => {
+    const imageId = `${data.code}-${data.name}`
+    const storageRef = ref(storage, `/productImage/${imageId}`)
+    const uploadTask = uploadBytesResumable(storageRef, data.image)
+    uploadTask.on('state_changed', () => {
+      // Here progress bar
+    }, (error) => {
+      console.error(error)
+      switch (error.code) {
+        case 'storage/unauthorized':
+          // User doesn't have permission to access the object
+          break;
+        case 'storage/canceled':
+          // User canceled the upload
+          break;
+        case 'storage/unknown':
+          // Unknown error occurred, inspect error.serverResponse
+          break;
+        default:
+          return null
+      }
+    }, () => {
+      getDownloadURL(uploadTask.snapshot.ref)
+        .then(async firebaseUrl => {
+          data.image = firebaseUrl
+          const docRef = await addDoc(collection(store, "Products"), data)
+          console.log("Document written with ID: ", docRef.id);
+        })
+    })
+  }
+
   return {
     // Constants
     list,
@@ -93,7 +143,8 @@ const useProducts = () => {
     fetchProducts,
     getAllProducts,
     getProductsByCategory,
-    getProductsByName
+    getProductsByName,
+    createProduct,
   }
 }
 

@@ -5,7 +5,7 @@ export const theme = {
     primaryLight: '#100d28',
     secundaryDark: '#797979',
     secundaryLight: '#C4C4C4',
-    accent: '#E5CA44',
+    accent: '#E8DC00',
     link: '#1101A6',
     white: '#FFFFFF',
     black: '#222931',
@@ -21,6 +21,8 @@ export const theme = {
     header: 990,
     menuIconClose: 980,
     menu: 970,
+    overlay: 960,
     menuProducts: 960,
+    headerAdmin: 950,
   }
 }

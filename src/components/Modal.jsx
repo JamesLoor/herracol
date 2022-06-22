@@ -12,7 +12,6 @@ const ModalStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   transition: 0.3s;
   z-index: ${theme.positions.modal};
   background-color: ${theme.colors.modalBackground};
@@ -25,7 +24,6 @@ const ModalStyled = styled.div`
     overflow: scroll;
     max-width: ${({ maxWidth }) => maxWidth ? `${maxWidth}px` : '800px'};
     max-height: ${({ maxHeight }) => maxHeight ? `${maxHeight}px` : 'none'};
-    cursor: default;
     background-color: ${theme.colors.white};
   }
 

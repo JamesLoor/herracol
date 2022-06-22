@@ -8,6 +8,7 @@ import { catalogsAgrimix } from '../data/catalogsAgrimix.data'
 import { theme } from '../theme'
 import CategoryItemList from './CategoryItemList'
 import useProducts from '../hooks/useProducts'
+import { catalogsBosco } from '../data/catalogsBosco.data'
 
 const MenuCategoryStyled = styled.div`
   .menu__category {
@@ -25,6 +26,7 @@ const MenuCategoryStyled = styled.div`
   }
 
   .menu__category::-webkit-scrollbar {
+    -webkit-appearance: none;
     width: 5px;
     height: 5px;
   }
@@ -130,9 +132,9 @@ const MenuCategory = ({ className }) => {
       <div className="menu__category">
         <h3>Categorias</h3>
         <ul>
-            {categories.map(({ id, name, url }) => {
+            {categories.map(({ id, name, path }) => {
               return (
-                <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenuCategory}/>
+                <CategoryItemList key={id} name={name} path={path} closeMenu={closeMenuCategory}/>
               )
             })}
         </ul>
@@ -142,8 +144,18 @@ const MenuCategory = ({ className }) => {
           {
             catalogsHerracol.map(({ id, name, url, type }) => {
             return (
-              <CategoryItemList key={id} name={name} type={type} url={url} closeMenu={closeMenu}/>
+              <CategoryItemList key={id} name={name} type={type} path={url} closeMenu={closeMenu}/>
             )
+          })}
+        </ul>
+
+        <h4>Catálogo Bosco</h4>
+        <ul className="menu__catalog">
+          {
+            catalogsBosco.map(({ id, name, url, type }) => {
+              return (
+                <CategoryItemList key={id} name={name} type={type} path={url} closeMenu={closeMenu}/>
+              )
           })}
         </ul>
 
@@ -151,7 +163,7 @@ const MenuCategory = ({ className }) => {
         <ul className="menu__catalog">
           {catalogsAgrimix.map(({ id, name, url }) => {
             return (
-              <CategoryItemList key={id} name={name} url={url} closeMenu={closeMenu}/>
+              <CategoryItemList key={id} name={name} path={url} closeMenu={closeMenu}/>
             )
           })}
         </ul>
