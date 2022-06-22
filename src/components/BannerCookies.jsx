@@ -3,9 +3,7 @@ import styled from 'styled-components'
 import Button from './Button'
 import Modal from './Modal'
 import LogoSvgShort from '../assets/logoHerracolSA.png'
-import { useState } from 'react'
 import useCookies from '../hooks/useCookies'
-import { useEffect } from 'react'
 
 const BannerCookiesStyled = styled.div`
   display: grid;
