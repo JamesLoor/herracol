@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
+import BannerCookies from './BannerCookies'
 import Header from './Header'
 
 const LayoutStyled = styled.div`
@@ -16,6 +17,7 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
+      <BannerCookies />
     </LayoutStyled>
   )
 }
